@@ -1,0 +1,3 @@
+com.minato.cicdtest.config.ApplicationRepositoriesAutoConfiguration
+com.minato.cicdtest.config.ApplicationTransactionManagersAutoConfig
+com.minato.cicdtest.config.ApplicationProvidersAutoConfiguration
