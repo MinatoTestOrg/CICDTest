@@ -31,5 +31,6 @@ jobs:
       run: |
         cp .m2/settings.xml .m2/settings.xml.tmp
         sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml.tmp
+        sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTFICATORY_PASS}}/' .m2/settings.xml.tmp
         more .m2/settings.xml
         more .m2/settings.xml.tmp
