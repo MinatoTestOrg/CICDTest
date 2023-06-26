@@ -30,7 +30,7 @@ jobs:
     - name: Building project...
       run: |
         npm install -g @angular/cli
-        mvn -s .m2/settings.xml --batch-mode clean install -D IMAGE_VERSION_ID=${{env.IMAGE_NAME}} -D COMMIT_ID=$CI_COMMIT_SHA
+        mvn -s .m2/settings.xml --batch-mode clean install -D IMAGE_VERSION_ID=${{env.IMAGE_NAME}} -D COMMIT_ID=128687bbd2c85dbe3c39ce1e8ca2ad20922ec749
         mvn -f BackendApp/pom.xml jib:build -P cloud-run-dev -s .m2/settings.xml --batch-mode
 
     - name: Login
