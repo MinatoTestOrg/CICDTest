@@ -46,7 +46,7 @@ jobs:
     - name: Deploying image...
       run: |
         export CLOUDSDK_CORE_DISABLE_PROMPTS=1
-        gcloud beta run deploy cicd --use-http2 --service-account=${{secrets.CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT}} --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
+        gcloud beta run deploy cicd --use-http2 --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
 
   pre-prod-deployment:
     if: contains( 'refs/heads/pre-prod', github.ref)
@@ -86,7 +86,7 @@ jobs:
     - name: Deploying image...
       run: |
         export CLOUDSDK_CORE_DISABLE_PROMPTS=1
-        gcloud beta run deploy cicdtest --use-http2 --service-account=${{secrets.CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT}} --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
+        gcloud beta run deploy cicdtest --use-http2 --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
  
   test-deployment:
     if: contains( 'refs/heads/test', github.ref)
@@ -126,7 +126,7 @@ jobs:
     - name: Deploying image...
       run: |
         export CLOUDSDK_CORE_DISABLE_PROMPTS=1
-        gcloud beta run deploy cicdtest --use-http2 --service-account=${{secrets.CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT}} --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
+        gcloud beta run deploy cicdtest --use-http2 --image=${{env.IMAGE_NAME}} --vpc-connector=${{env.VPC_CONNECTOR}} --region=${{env.REGION_ID}} --platform=managed --timeout=600s --concurrency=80 --no-use-http2 --allow-unauthenticated --quiet --vpc-egress=all-traffic --user-output-enabled --port=9090 --max-instances=10 --min-instances=0 --cpu=2 --memory=1Gi --set-env-vars JAVA_TOOL_OPTIONS="-Xss256k" --execution-environment=gen2 --update-secrets=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-ID:latest,SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET=SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT-SECRET:latest
 
   prod-deployment:
     if: contains( 'refs/heads/prod', github.ref)
