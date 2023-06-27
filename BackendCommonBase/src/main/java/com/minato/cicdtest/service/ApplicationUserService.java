@@ -4,7 +4,7 @@ import com.minato.cicdtest.exception.ErrorMessages;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.vs.eva.gen.v1.base.utils.constants.Constants;
+import com.vs.rappit.base.util.Constants;
 
 import com.minato.cicdtest.exception.ErrorCodes;
 import com.vs.rappit.base.logger.Logger;
