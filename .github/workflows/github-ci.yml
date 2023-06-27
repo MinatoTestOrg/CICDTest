@@ -3,7 +3,7 @@ run-name: Deployment Runner
 on: [push, workflow_dispatch]
 
 env:
-  IMAGE_NAME: ${{secrets.REGION_ID}}-docker.pkg.dev/${{secrets.GCP_PROJECT_ID}}/appengine1-repository/cicdtest
+  IMAGE_NAME: ${{secrets.REGION_ID}}-docker.pkg.dev/${{secrets.GCP_PROJECT_ID}}/cicdtest-repository/cicdtest
   VPC_CONNECTOR: eva-modeller
   REGION_ID: europe-west1
 
