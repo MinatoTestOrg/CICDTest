@@ -89,12 +89,12 @@ implements IApplicationUserService<ApplicationUser>
 		return user;
 	}
 	
-	@Override
+	// @Override
 	public ApplicationUser createAdminUser(String email) {
 		ApplicationUser user = new ApplicationUser();
 		user.setEmail(email);
 		user.setDevAdmin(true);
-		user.setFirstName(Constants.ADMIN_USER);
+		// user.setFirstName(Constants.ADMIN_USER);
 		List<String> role = new ArrayList<>();
 		role.add(Roles.DEVADMIN.getRoleName());
 		user.setUserRoles(role);
